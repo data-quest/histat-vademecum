@@ -97,7 +97,7 @@
             <div id="microsite">
                     <div class="infos">
                     <div class="histat">
-                        <span class="orange">histat:</span> <br/> <span class="description"><?= __('Historical statistics')?></span>
+                        <span class="orange">vademecum:</span> <br/> <span class="description"><?= __('Historical statistics')?></span>
                     </div>
                     <div class="values">
                         <span class="orange"><?= $values ?></span> <?= __('Values'); ?>
