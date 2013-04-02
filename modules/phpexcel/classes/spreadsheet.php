@@ -131,7 +131,7 @@ class Spreadsheet {
             $writer->setUseBOM(true);
         }
         $writer->save($settings['fullpath']);
-
+								ob_clean();
         return $settings['fullpath'];
     }
 
