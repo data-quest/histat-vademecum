@@ -77,7 +77,7 @@ if (isset($_SERVER['KOHANA_ENV'])) {
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-    'base_url' => '/histat/',
+    'base_url' =>dirname($_SERVER['SCRIPT_NAME']).'/',
     'index_file' => FALSE, // SEO (avoid index.php/mycontroller/action)
     'profile' => (Kohana::$environment !== Kohana::PRODUCTION), //see how good you are
     'caching' => TRUE//(Kohana::$environment === Kohana::PRODUCTION),
@@ -111,7 +111,6 @@ Kohana::modules(array(
 ));
 
 $langs = implode('|', Kohana::$config->load('config')->get('avaliable_languages', array()));
-
 
 
 
