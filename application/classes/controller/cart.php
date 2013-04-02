@@ -116,7 +116,7 @@ class Controller_Cart extends Controller_Table {
         }
         $cart = ORM::factory('cart')
                 ->where('user_id', '=', $this->user->id)
-                ->where(DB::expr('CONCAT_WS("/",ID_HS,filter)'), 'IN', DB::expr("('" . implode("','", $this->request->post('selected')) . "')"))
+                ->where(DB::expr('CONCAT_WS("/",cart.ID_HS,filter)'), 'IN', DB::expr("('" . implode("','", $this->request->post('selected')) . "')"))
                 ->find_all();
         $formats = array(
             'xsl' => 'Excel5',
@@ -179,7 +179,7 @@ class Controller_Cart extends Controller_Table {
         $this->rrmdir('/tmp/histat/download_' . $this->user->id . '/');
 
 
-        $this->response->send_file('/tmp/histat/download_' . $this->user->id . '.zip', sprintf("histat.gesis.org_Warenkorb_%s.zip", date("m-d-y-h-i", time())), array('delete' => TRUE));
+        $this->response->send_file('/tmp/histat/download_' . $this->user->id . '.zip', sprintf("vademecum.gesis.org_Warenkorb_%s.zip", date("m-d-y-h-i", time())), array('delete' => TRUE));
     }
 
     private function rrmdir($dir) {
