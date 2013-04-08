@@ -1,14 +1,14 @@
-<div id="cart">
-    <h1>Warenkorb</h1>
+<div id="cart" style="padding:15px">
+    <h1>Cart</h1>
     <?php if ($message) : ?>
         <div class="tooltip" style="position: relative;margin:1em 0">
             <?php
             switch ($message) {
-                case 'error': echo 'filter cannot be deleted';
+                case 'error': echo 'Filter could not be deleted';
                     break;
-                case 'success': echo 'filter deleted successfully';
+                case 'success': echo 'Filter successfull deleted';
                     break;
-                default: echo 'unknown error';
+                default: echo 'Unknown Error';
                     break;
             }
             ?>
@@ -26,8 +26,8 @@
                     <td width="10%">ZA <?= $project['za'] ?></td>
                     <td width="15%" class="even"><?= $project['theme'] ?></td>
                     <td width="55%"><?= $project['name'] ?></td>
-                    <td style="display:none" width="23%" class="even found show"><span class="id" style="display:none"><?= $projectID ?></span><?= __('show tables') ?></td>
-                    <td  width="23%" class="even found hide"><span class="id" style="display:none"><?= $projectID ?></span><?= __('close tables')?></td>
+                    <td style="display:none" width="23%" class="even found show"><span class="id" style="display:none"><?= $projectID ?></span>Show table view</td>
+                    <td  width="23%" class="even found hide"><span class="id" style="display:none"><?= $projectID ?></span>Close table view</td>
 
                 </tr>
 
@@ -40,7 +40,7 @@
                                     <div class="left" style="width:10%;text-align: center"><?= Form::checkbox('selected[]', $tableID . '/' . $filter); ?></div>
                                     <div class="normal left"><h4><?= $tableName ?></h4></div>
                                     <div class="right">
-                                        <span class="timelines"><?= HTML::anchor('table/details/' . $tableID . '/' . $filter . '#tabelle', __(':timelines Zeitreihen', array(':timelines' => $values['timelines']))) ?></span>
+                                        <span class="timelines"><?= HTML::anchor('table/details/' . $tableID . '/' . $filter . '#tabelle', __(':timelines timseries', array(':timelines' => $values['timelines']))) ?></span>
                                         <span class="delete"> <?= HTML::anchor('cart/delete/' . $tableID . '/' . $filter, '') ?></span>
                                     </div>
                                     <div class="clear"></div>
@@ -67,16 +67,17 @@
 
         <div style="position: relative;"> 
             <?= Form::open('cart/delete_selected', array('class' => 'selected')) ?>
-            <?= Form::submit('delete', __('Delete'), array('class' => 'button', 'style' => 'width:150px;margin: 0px 0px;position:absolute;left:0px')) ?>
+            <?= Form::submit('delete', __('Delete'), array('class' => 'button', 'style' => 'width:150px;height:40px;max-height:none')) ?>
             <?= Form::close() ?>
             <?= Form::open('cart/download_selected', array('class' => 'selected', 'id' => 'download')) ?>
-            <div class="download" style="position: absolute;left:160px;width:500px">
+            <div class="download" style="position: relative;width:500px">
                 <div class="button" style="width:150px;position: relative;text-align: center">Download</div>
-                <div class="buttons" style="position: relative;padding: 10px 0;top:-36px;left:10px;">
+                <div class="buttons" >
                     <a class="button" id="xls" href="#" >.XLS</a>
                     <a class="button" id="xlsx" href="#">.XLSX</a>
                     <a class="button" id="csv" href="#">.CSV</a>
                 </div>
+                <div class="clear"></div>
             </div>
             <div class="overlay transparent" style="display:none"></div>
             <div class="dialog tooltip" style="display:none">

@@ -1,4 +1,4 @@
-<div id="cart">
+<div id="cart" style="padding:15px">
     <h1>Warenkorb</h1>
     <?php if ($message) : ?>
         <div class="tooltip" style="position: relative;margin:1em 0">
@@ -67,16 +67,17 @@
 
         <div style="position: relative;"> 
             <?= Form::open('cart/delete_selected', array('class' => 'selected')) ?>
-            <?= Form::submit('delete', __('Delete'), array('class' => 'button', 'style' => 'width:150px;margin: 0px 0px;position:absolute;left:0px')) ?>
+            <?= Form::submit('delete', __('Delete'), array('class' => 'button', 'style' => 'width:150px;height:40px;max-height:none')) ?>
             <?= Form::close() ?>
             <?= Form::open('cart/download_selected', array('class' => 'selected', 'id' => 'download')) ?>
-            <div class="download" style="position: absolute;left:160px;width:500px">
+            <div class="download" style="position: relative;width:500px">
                 <div class="button" style="width:150px;position: relative;text-align: center">Download</div>
-                <div class="buttons" style="position: relative;padding: 10px 0;top:-36px;left:10px;">
+                <div class="buttons" >
                     <a class="button" id="xls" href="#" >.XLS</a>
                     <a class="button" id="xlsx" href="#">.XLSX</a>
                     <a class="button" id="csv" href="#">.CSV</a>
                 </div>
+                <div class="clear"></div>
             </div>
             <div class="overlay transparent" style="display:none"></div>
             <div class="dialog tooltip" style="display:none">
