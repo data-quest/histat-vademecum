@@ -8,7 +8,7 @@ return array(
         'min_length' => 'user name should contain at least :param2 characters.',
         'max_length' => 'user name should consist of a maximum of :param2 characters',
         'unique' => 'this username already exists.',
-        'alpha_dash' => 'user name should contain only figures, characters, and underscore (underline).',
+        'alpha_dash' => 'user name should contain only numbers, characters, and underscore (underline).',
     ),
     'name' => array(
         'not_empty' => 'First name is not specified.',
