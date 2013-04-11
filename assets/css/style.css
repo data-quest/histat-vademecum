@@ -986,11 +986,11 @@ table tr td.even {
 /*Style auth/login end*/
 /*Style auth/create */
 #auth #create{
-    width:360px;
+    width:500px;
     margin: auto;
 }
 #auth #create form{
-    line-height: 25px;
+    line-height: 30px;
 }
 #auth #create input{
     float:right;
