@@ -10,8 +10,9 @@ abstract class Auth extends Kohana_Auth {
        
         if (!$user) {
             return $default;
-        } else {
+        } elseif($user instanceof	Model_Auth_User) {
             try{
+												
             $user->ip = $_SERVER['REMOTE_ADDR'];
             $user->last_action = time();          
             $user->update();
