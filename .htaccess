@@ -4,7 +4,7 @@ Options All -Indexes -Multiviews
 RewriteEngine On
 
 # Installation directory
-RewriteBase /histat/
+#RewriteBase /histat/
 
 # Protect hidden files from being viewed
 <Files .*>
